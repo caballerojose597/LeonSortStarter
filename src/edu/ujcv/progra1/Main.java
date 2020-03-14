@@ -5,15 +5,20 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
-        int[] elementos = {3,2,4,5,6,7,9,9,10,3,5};
-        ShuffleSort s = new ShuffleSort();
-        elementos = s.shuffleSort(elementos);
+        int[] elementos = {20,50,65,32,4,5,6,79,100,321,8654,6545,6454,642221,645479,978,9754,97978,42216,23,
+
+        };
+        MergeSort  m = new MergeSort();
+        elementos = m.mergeSort(elementos);
 
         for (int i = 0; i < elementos.length; i++) {
             System.out.println(elementos[i]);
         }
 
-        elementos = new int[]{3,2,4,5,6,7,9,9,10,3,5};
-        System.out.println("\n\ntarda "+ s.sort(elementos)+ " milisegundos");
+        elementos = new int[]{20,50,65,32,4,5,6,79,100,321,8654,6545,6454,642221,645479,978,9754,97978,42216,23,
+
+
+        };
+        System.out.println("\n\ntarda "+ m.sort(elementos)+ " milisegundos");
     }
 }
