@@ -9,7 +9,7 @@ public class Main {
 
         };
         HeapSort  h = new HeapSort();
-        elementos = h.heapSort(elementos);
+        h.heapSort(elementos);
 
         for (int i = 0; i < elementos.length; i++) {
             System.out.println(elementos[i]);
