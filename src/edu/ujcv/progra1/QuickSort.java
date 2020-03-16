@@ -4,30 +4,35 @@ public class QuickSort implements SortTester {
     @Override
     public long sort(int[] array) {
         long start = System.nanoTime();
-        quickSort(array);
+        int n = array.length;
+        quickSort(array,0,n-1);
 
         long end = System.nanoTime();
 
         return end - start;
     }
-    static int partition(int arr[], int low, int high) {
-        int pivot = arr[high];
-        int i = (low-1);
-        for (int j=low; j<=high-1; j++) {
-            if (arr[j] <= pivot) {
-                i++;
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+
+    public static void quickSort(int A[], int izq, int der) {
+
+        int pivote = A[izq];
+        int i = izq;
+        int j = der;
+        int aux;
+
+        while (i < j) {
+            while (A[i] <= pivote && i < j) i++;
+            while (A[j] > pivote) j--;
+            if (i < j) {
+                aux = A[i];
+                A[i] = A[j];
+                A[j] = aux;
             }
         }
-        int temp = arr[i+1];
-        arr[i+1] = arr[high];
-        arr[high] = temp;
-
-        return i+1;
+        A[izq] = A[j];
+        A[j] = pivote;
+        if (izq < j - 1)
+            quickSort(A, izq, j - 1);
+        if (j + 1 < der)
+            quickSort(A, j + 1, der);
     }
-
-
-
 }
