@@ -3,13 +3,16 @@ package edu.ujcv.progra1;
 public class QuickSort implements SortTester {
     @Override
     public long sort(int[] array) {
-        long start = System.nanoTime();
+        long start = System.currentTimeMillis();
+        QuickSort(array);
+        long end = System.currentTimeMillis();
+
+        return end - start;
+    }
+    public static void QuickSort (int [] array){
         int n = array.length;
         quickSort(array,0,n-1);
 
-        long end = System.nanoTime();
-
-        return end - start;
     }
 
     public static void quickSort(int A[], int izq, int der) {

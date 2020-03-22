@@ -3,10 +3,10 @@ package edu.ujcv.progra1;
 public class BubleSort implements SortTester {
     @Override
     public long sort(int[] array) {
-        long start = System.nanoTime();
+        long start = System.currentTimeMillis();
         bubleSort(array);
 
-        long end = System.nanoTime();
+        long end = System.currentTimeMillis();
 
         return end - start;
     }
